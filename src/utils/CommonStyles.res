@@ -25,3 +25,8 @@ let link = css`
     },
   },
 `
+
+let inlineLink = css`
+  font-weight: bold;
+  color: var(--primary-color);
+`

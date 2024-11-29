@@ -46,18 +46,6 @@ module Styles = {
   let firstParagraph = css`
     margin-top: 0;
   `
-  let inlineLink = css`
-    font-weight: bold;
-    color: inherit;
-    &:hover: {
-      color: green !important;
-    }
-  `
-  let link = css`
-    display:  block;
-    font-weight: bold;
-    color: inherit;
-  `
 }
 
 @react.component
@@ -82,11 +70,13 @@ let make = () => {
       </p>
       <p className=Styles.firstParagraph>
         {`I am a Senior Software Engineer at `->s}
-        <a className=Styles.inlineLink href="https://cca.io" target="__blank"> {"cca.io"->s} </a>
+        <a className=CommonStyles.inlineLink href="https://cca.io" target="__blank">
+          {"cca.io"->s}
+        </a>
         {`, where we build web and mobile apps for public safety and public transport companies. In these domains it is very important to have reliable and robust software, which is why we build our software with statically and soundly typed programming languages like ReScript.`->s}
         <Spacer />
         {"If you are interested in the ReScript programming language, please check out my "->s}
-        <a className=Styles.inlineLink href="/blog"> {s("blog")} </a>
+        <a className=CommonStyles.inlineLink href="/blog"> {s("blog")} </a>
         {"."->s}
       </p>
     </div>

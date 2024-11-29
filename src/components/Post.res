@@ -86,15 +86,19 @@ module Styles = {
 }
 
 @react.component
-let make = (~post: Pages.item) => <>
-  <Pages.Head>
-    <title> {`${post.title} - fham.dev`->s} </title>
-  </Pages.Head>
-  <div className=Styles.container>
-    <h1 className=Styles.title> {post.title->s} </h1>
-    <div className=Styles.date>
-      {post.date->Option.mapOr(React.null, str => str->getFormattedDateString->s)}
+let make = (~post: Pages.item) =>
+  <Section>
+    <Pages.Head>
+      <title> {`${post.title} - fham.dev`->s} </title>
+    </Pages.Head>
+    <div className=Styles.container>
+      <h1 className=Styles.title> {post.title->s} </h1>
+      <div className=Styles.date>
+        {post.date->Option.mapOr(React.null, str => str->getFormattedDateString->s)}
+      </div>
+      <article className=Styles.body dangerouslySetInnerHTML={"__html": post.body} />
     </div>
-    <article className=Styles.body dangerouslySetInnerHTML={"__html": post.body} />
-  </div>
-</>
+    <p>
+      <a className=CommonStyles.inlineLink href="/blog"> {s("More articles")} </a>
+    </p>
+  </Section>
