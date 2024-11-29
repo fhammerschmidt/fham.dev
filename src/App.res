@@ -177,6 +177,13 @@ module Styles = {
   `
 }
 
+// <meta property="og:image" content={config.baseUrl ++ "/public/assets/images/share.jpg"} />
+// <meta name="twitter:image" content={config.baseUrl ++ "/public/assets/images/share.jpg"} />
+// <meta name="twitter:site" content="@fham_r" />
+// <meta property="og:image:width" content="1500" />
+// <meta property="og:image:height" content="777" />
+// <link rel="shortcut icon" href="/public/assets/images/favicon.png" />
+
 let make = ({url, config}: Pages.App.appProps) => {
   React.useEffect1(() => {
     let () = globalThis["scrollTo"](0, 0)
@@ -194,12 +201,6 @@ let make = ({url, config}: Pages.App.appProps) => {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={config.baseUrl ++ "/public/assets/images/share.jpg"} />
-        <meta name="twitter:image" content={config.baseUrl ++ "/public/assets/images/share.jpg"} />
-        <meta name="twitter:site" content="@fham_r" />
-        <meta property="og:image:width" content="1500" />
-        <meta property="og:image:height" content="777" />
-        <link rel="shortcut icon" href="/public/assets/images/favicon.png" />
         {
           let url = config.baseUrl ++ ("/" ++ url.path->List.toArray->Array.join("/"))
           <link rel="canonical" href={url->String.endsWith("/") ? url : url ++ "/"} />
