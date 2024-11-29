@@ -8,7 +8,8 @@
     "clean": "rescript clean",
     "deploy": "gh-pages -d dist",
     "server": "pages start src/App.mjs 3000",
-    "prerender": "pages build src/App.mjs"
+    "prerender": "pages build src/App.mjs",
+    "release": "rm -fr dist && bun run build && bun run prerender && bun run deploy"
   },
   "keywords": [
     "rescript"
