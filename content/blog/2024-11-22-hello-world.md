@@ -18,6 +18,6 @@ which is not possible in plain JavaScript, since `switch` is a statement there a
 
 I use this language as a daily driver at work since it exists (2020) and I, among many others, help make it better every day by contributing to its documentation or standard library, by fixing editor tooling or compiler bugs or just by writing more blog articles like this one.
 
-As you can imagine, this very website is also powered by ReScript, so I just have to give a shoutout to [bloodyowl.io](bloodyowl.io) for creating the very down-to-earth [rescript-pages](https://bloodyowl.github.io/rescript-pages/) static site generator.
+As you can imagine, this very website is also powered by ReScript, so I just have to give a shoutout to [bloodyowl.io](https://bloodyowl.io/) for creating the very down-to-earth [rescript-pages](https://bloodyowl.github.io/rescript-pages/) static site generator.
 
 Of course I also had to utilize cutting-edge tech like [Bun](https://bun.sh/), hence the title. I am already looking forward to doing more smaller posts like this one.
