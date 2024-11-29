@@ -189,9 +189,6 @@ let make = ({url, config}: Pages.App.appProps) => {
         <html lang="en" />
         <meta charSet="UTF-8" />
         <meta
-          name="google-site-verification" content="w75-P-0ywXWkyZvYPbkSM3VSM2hny25UrfeiWJt3B1k"
-        />
-        <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
         />
