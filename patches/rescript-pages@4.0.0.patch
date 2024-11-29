@@ -1,0 +1,65 @@
+diff --git a/node_modules/rescript-pages/.bun-tag-cfc37e2c35199934 b/.bun-tag-cfc37e2c35199934
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/node_modules/rescript-pages/.bun-tag-e1064c9d9cd4d21b b/.bun-tag-e1064c9d9cd4d21b
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/src/PagesServer.res b/src/PagesServer.res
+index 31af8380321a243e3a7681ce1da05d33064cf5f7..6be2cfbd89910288ae1d9a7f71acdd374912ffca 100644
+--- a/src/PagesServer.res
++++ b/src/PagesServer.res
+@@ -42,8 +42,12 @@ external remarkable: (string, config) => remarkable = "Remarkable"
+ @module("remarkable/dist/cjs/linkify.js")
+ external linkify: remarkablePlugin = "linkify"
+ 
++type options = {language: Nullable.t<string>}
++
++// @module("highlight.js") @scope("default")
++// external highlight: (~lang: Nullable.t<string>, string) => {"value": string} = "highlight"
+ @module("highlight.js") @scope("default")
+-external highlight: (~lang: Nullable.t<string>, string) => {"value": string} = "highlight"
++external highlight: (string, options) => {"value": string} = "highlight"
+ @module("highlight.js") @scope("default")
+ external highlightAuto: string => {"value": string} = "highlightAuto"
+ 
+@@ -77,10 +81,11 @@ let remarkable = remarkable(
+     "xhtmlOut": true,
+     "langPrefix": "hljs language-",
+     "highlight": (code, lang) => {
++      Console.warn(lang)
+       if lang == Nullable.undefined {
+         code
+       } else {
+-        try {highlight(~lang, code)["value"]} catch {
++        try {highlight(code, {language: lang})["value"]} catch {
+         | _ => highlightAuto(code)["value"]
+         }
+       }
+diff --git a/src/rescript-highlightjs.cjs b/src/rescript-highlightjs.cjs
+index 5f90a83c46d40124a71656c037e6519cd909b07e..3b3af10f2f9a00065460ca1a830b855ab36df79e 100644
+--- a/src/rescript-highlightjs.cjs
++++ b/src/rescript-highlightjs.cjs
+@@ -26,16 +26,15 @@ module.exports = function(hljs) {
+   var RE_MODULE_IDENT = '[A-Z_][0-9a-zA-Z_]*';
+ 
+   var KEYWORDS = {
+-    // See: https://github.com/rescript-lang/syntax/blob/4872b983eb023f78a972063eb367339e6897bf16/src/res_token.ml#L166
++    // See: https://github.com/rescript-lang/rescript-compiler/blob/182c6e81617a9b83338a7b159af2d9741550f97a/jscomp/syntax/src/res_token.ml#L211
+     keyword:
+-      'and as assert catch constraint downto else exception export external false for ' +
+-      'if import in include lazy let module mutable of open private rec switch ' +
+-      'to true try type when while with',
++      "and as assert catch constraint downto else exception export external false for " +
++      "if in include lazy let module mutable of open private rec switch " +
++      "to true try type when while with async await",
+     // not reliable
+-     //built_in:
+-       //'array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit',
+-    literal:
+-      'true false'
++    //built_in:
++    //'array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit',
++    literal: "true false",
+   };
+ 
+   const STRING_MODE = {

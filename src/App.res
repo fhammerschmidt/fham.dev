@@ -7,17 +7,6 @@ Emotion.injectGlobal(`
   --text-color-dark: #f0f0f0;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
 * {
   box-sizing: inherit;
 }
@@ -32,15 +21,9 @@ body {
   font-family: Menlo, HelveticaNowDisplay, "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color-light);
   color: var(--text-color-light);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-
-
-body {
   background-color: var(--bg-color-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
   color: var(--text-color-light);
   @media (prefers-color-scheme: dark) {
     background-color: var(--bg-color-dark);
@@ -117,7 +100,7 @@ Emotion.injectGlobal(`pre, .hljs {
 .hljs-name,
 .hljs-quote,
 .hljs-selector-tag,
-.hljs-selector-pseudo {
+.hljs-selector-pseudo, .hljs-constructor {
   /* prettylights-syntax-entity-tag */
   color: #8ddb8c;
 }
