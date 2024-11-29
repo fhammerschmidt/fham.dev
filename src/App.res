@@ -52,7 +52,7 @@ Emotion.injectGlobal(`pre, .hljs {
 .hljs-type,
 .hljs-variable.language_ {
   /* prettylights-syntax-keyword */
-  color: #f47067;
+  color: var(--primary-color);
 }
 
 .hljs-title,

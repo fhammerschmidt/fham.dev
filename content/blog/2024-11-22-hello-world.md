@@ -5,13 +5,13 @@ title: bun run Init.res.mjs
 
 Hello dear reader!
 
-My name is Florian and I am a self-proclaimed [ReScript](https://rescript-lang.org/) enthusiast. ReScript is a modern and statically typed programming language that compiles to JavaScript. It is a Meta-Language-descendant where almost everything is an expression. But syntactically it is mostly influenced by JavaScript. This enables one to write idioms like
+My name is Florian and I am a self-proclaimed [ReScript](https://rescript-lang.org/) enthusiast. ReScript is a modern and statically typed programming language that compiles to JavaScript. It is a [meta-language](<https://en.wikipedia.org/wiki/ML_(programming_language)>) descendant where almost everything is an expression. But syntactically it is mostly influenced by JavaScript. This enables one to write idioms like
 
 ```res
- switch await myResultPromise {
-  | Ok(data) => data->handleData
-  | Error(error) error->handleError
- }
+switch await myResultPromise {
+| Ok(data) => data->handleData
+| Error(error) error->handleError
+}
 ```
 
 which is not possible in plain JavaScript, since `switch` is a statement there and [pattern-matching](https://github.com/tc39/proposal-pattern-matching) is still not available.
