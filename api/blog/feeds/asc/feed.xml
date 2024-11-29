@@ -4,8 +4,13 @@
     <title><![CDATA[fham.dev]]></title>
     <description><![CDATA[Web- and mobile app developer. ReScript. React. React-Native.]]></description>
     <link>https://fham.dev</link>
-    <lastBuildDate>Fri, 29 Nov 2024 00:45:42 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 29 Nov 2024 00:47:27 GMT</lastBuildDate>
     <atom:link href="https://fham.dev/api/blog/feeds/asc/feed.xml" rel="self" type="application/rss+xml"/>
-    
+    <item>
+      <title><![CDATA[bun run Init.res.mjs]]></title>
+      <link>https://fham.dev/</link>
+      <guid isPermaLink="false">2024-11-22-hello-world</guid>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 GMT</pubDate>
+   </item>
   </channel>
 </rss>
