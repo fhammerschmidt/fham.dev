@@ -73,7 +73,7 @@ let make = () => {
         <a className=Styles.iconLink href="https://x.com/fham_r">
           <Icon.X />
         </a>
-        <a className=Styles.iconLink href="https://bsky.app/profile/fhamm.bsky.social">
+        <a className=Styles.iconLink href="https://bsky.app/profile/fham.dev">
           <Icon.Bluesky />
         </a>
       </div>
