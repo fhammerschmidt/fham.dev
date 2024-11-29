@@ -28,7 +28,7 @@ module Styles = {
       display: flex;
       align-items: center;
       justify-content: center;
-      opacity: 0.7;
+      opacity: 0.8;
       font-weight: bold;
       color: var(--text-color-light);
     }
@@ -41,6 +41,10 @@ module Styles = {
   `
   let rescript = css`
     padding: 3px 12px 0;
+    transition: transform .2s;
+    :hover {
+      transform: scale(1.5);
+    }
   `
   let spacer = css`
     @media (min-width: 500px) {
